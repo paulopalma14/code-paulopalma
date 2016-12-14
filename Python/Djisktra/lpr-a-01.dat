@@ -1,0 +1,107 @@
+! HEADER WITH MANDATORY LINES
+Name       = LPR-A-01.DAT
+Nodes      = 28
+Depot      = 14
+DumpTime   = 300
+Arcs       = 95
+Tasks      = 52
+Capacity   = 10000
+Range      = 21600
+
+
+! LIST OF INTERNAL ARCS
+Arc= 1, From= 1, To= 2, Qty=  0, Inv= 0, Trav=34, Coll= 34, Turns=3,4,5, PenTurns=200000,0,5
+Arc= 2, From= 1, To= 7, Qty=  0, Inv= 0, Trav=22, Coll= 22, Turns=17,18,19, PenTurns=200000,0,5
+Arc= 3, From= 2, To= 1, Qty=240, Inv= 0, Trav=34, Coll=274, Turns=1,2, PenTurns=200000,8
+Arc= 4, From= 2, To= 3, Qty=137, Inv= 0, Trav=19, Coll=156, Turns=6,7,8, PenTurns=200000,10,25
+Arc= 5, From= 2, To= 8, Qty=279, Inv= 0, Trav=20, Coll=299, Turns=20,21,22, PenTurns=20,10,5
+Arc= 6, From= 3, To= 2, Qty=  0, Inv= 0, Trav=19, Coll= 19, Turns=3,4,5, PenTurns=200000,0,5
+Arc= 7, From= 3, To= 4, Qty=  0, Inv= 0, Trav=20, Coll= 20, Turns=9,10,11, PenTurns=200000,5,12
+Arc= 8, From= 3, To=14, Qty=  0, Inv= 0, Trav=41, Coll= 41, Turns=40,41,42,43,95, PenTurns=0,0,0,0,0
+Arc= 9, From= 4, To= 3, Qty=264, Inv= 0, Trav=20, Coll=284, Turns=6,7,8, PenTurns=12,200000,0
+Arc=10, From= 4, To= 5, Qty=265, Inv= 0, Trav=22, Coll=287, Turns=12,13,14, PenTurns=0,0,0
+Arc=11, From= 4, To= 9, Qty=325, Inv= 0, Trav=21, Coll=346, Turns=23,24,25, PenTurns=200000,0,5
+Arc=12, From= 5, To= 4, Qty= 28, Inv= 0, Trav=22, Coll= 50, Turns=9,10,11, PenTurns=18,200000,5
+Arc=13, From= 5, To= 6, Qty=  0, Inv= 0, Trav=21, Coll= 21, Turns=15,16, PenTurns=200000,13
+Arc=14, From= 5, To=10, Qty=  0, Inv= 0, Trav=20, Coll= 20, Turns=26,27,28,29, PenTurns=0,0,0,0
+Arc=15, From= 6, To= 5, Qty=  0, Inv= 0, Trav=21, Coll= 21, Turns=12,13,14, PenTurns=0,0,0
+Arc=16, From= 6, To=11, Qty=285, Inv= 0, Trav=19, Coll=304, Turns=30,31,32, PenTurns=200000,2,6
+Arc=17, From= 7, To= 1, Qty=150, Inv= 0, Trav=22, Coll=172, Turns=1,2, PenTurns=20,200000
+Arc=18, From= 7, To= 8, Qty= 82, Inv= 0, Trav=42, Coll=124, Turns=20,21,22, PenTurns=12,200000,13
+Arc=19, From= 7, To=12, Qty= 47, Inv= 0, Trav=17, Coll= 64, Turns=33,34,35, PenTurns=200000,0,5
+Arc=20, From= 8, To= 2, Qty=  0, Inv= 0, Trav=20, Coll= 20, Turns=3,4,5, PenTurns=200000,5,7
+Arc=21, From= 8, To= 7, Qty=  0, Inv= 0, Trav=42, Coll= 42, Turns=17,18,19, PenTurns=12,200000,30
+Arc=22, From= 8, To=13, Qty=187, Inv= 0, Trav=23, Coll=210, Turns=36,37,38,39, PenTurns=200000,15,0,0
+Arc=23, From= 9, To= 4, Qty=101, Inv= 0, Trav=21, Coll=122, Turns=9,10,11, PenTurns=6,10,200000
+Arc=24, From= 9, To=10, Qty=122, Inv= 0, Trav=21, Coll=143, Turns=26,27,28,29, PenTurns=10,200000,0,17
+Arc=25, From= 9, To=15, Qty=153, Inv= 0, Trav=18, Coll=171, Turns=44,45,46,47,48, PenTurns=200000,0,10,0,0
+Arc=26, From=10, To= 5, Qty= 86, Inv= 0, Trav=20, Coll=106, Turns=12,13,14, PenTurns=21,3,200000
+Arc=27, From=10, To= 9, Qty=  0, Inv= 0, Trav=21, Coll= 21, Turns=23,24,25, PenTurns=0,20,200000
+Arc=28, From=10, To=11, Qty=  0, Inv= 0, Trav=18, Coll= 18, Turns=30,31,32, PenTurns=8,200000,7
+Arc=29, From=10, To=16, Qty=  0, Inv= 0, Trav=21, Coll= 21, Turns=49,50,51, PenTurns=200000,0,0
+Arc=30, From=11, To= 6, Qty=  0, Inv= 0, Trav=19, Coll= 19, Turns=15,16, PenTurns=200000,10
+Arc=31, From=11, To=10, Qty=305, Inv= 0, Trav=18, Coll=323, Turns=26,27,28,29, PenTurns=12,14,200000,7 
+Arc=32, From=11, To=17, Qty= 66, Inv= 0, Trav=18, Coll= 84, Turns=52,53,54,55, PenTurns=200000,10,0,0
+Arc=33, From=12, To= 7, Qty=197, Inv= 0, Trav=17, Coll=214, Turns=17,18,19, PenTurns=16,19,200000
+Arc=34, From=12, To=13, Qty= 64, Inv= 0, Trav=39, Coll=103, Turns=36,37,38,39, PenTurns=21,200000,0,0
+Arc=35, From=12, To=18, Qty=152, Inv= 0, Trav=22, Coll=174, Turns=56,57,58, PenTurns=0,0,0
+Arc=36, From=13, To= 8, Qty=  0, Inv= 0, Trav=23, Coll= 23, Turns=20,21,22, PenTurns=6,15,200000
+Arc=37, From=13, To=12, Qty=241, Inv= 0, Trav=39, Coll=280, Turns=33,34,35, PenTurns=13,200000,0
+Arc=38, From=13, To=14, Qty=  0, Inv= 0, Trav=19, Coll= 19, Turns=40,41,42,43,95, PenTurns=0,0,0,0,0
+Arc=39, From=13, To=19, Qty=  0, Inv= 0, Trav=18, Coll= 18, Turns=59,60,61,62, PenTurns=0,0,0,0
+Arc=40, From=14, To= 3, Qty=205, Inv= 0, Trav=41, Coll=246, Turns=6,7,8, PenTurns=12,12,0
+Arc=41, From=14, To=13, Qty=306, Inv= 0, Trav=19, Coll=325, Turns=36,37,38,39, PenTurns=10,8,0,0
+Arc=42, From=14, To=15, Qty=  0, Inv= 0, Trav=14, Coll= 14, Turns=44,45,46,47,48, PenTurns=9,0,12,0,0
+Arc=43, From=14, To=20, Qty=  0, Inv= 0, Trav=19, Coll= 19, Turns=63,64,65,66,67,68, PenTurns=0,12,0,0,0,0
+Arc=44, From=15, To= 9, Qty=  0, Inv= 0, Trav=18, Coll= 18, Turns=23,24,25, PenTurns=12,7,200000
+Arc=45, From=15, To=14, Qty=  0, Inv= 0, Trav=14, Coll= 14, Turns=40,41,42,43,95, PenTurns=0,0,0,0,0
+Arc=46, From=15, To=16, Qty=  0, Inv= 0, Trav=21, Coll= 21, Turns=49,50,51, PenTurns=10,7,8
+Arc=47, From=15, To=20, Qty=  0, Inv= 0, Trav=27, Coll= 27, Turns=63,64,65,66,67,68, PenTurns=0,200000,0,0,0,0
+Arc=48, From=15, To=21, Qty=301, Inv= 0, Trav=18, Coll=319, Turns=69,70,71,72, PenTurns=200000,0,0,0
+Arc=49, From=16, To=10, Qty= 88, Inv= 0, Trav=21, Coll=109, Turns=26,27,28,29, PenTurns=3,11,11,200000
+Arc=50, From=16, To=15, Qty=379, Inv= 0, Trav=21, Coll=400, Turns=44,45,46,47,48, PenTurns=13,0,200000,0,0
+Arc=51, From=16, To=17, Qty=372, Inv= 0, Trav=19, Coll=391, Turns=52,53,54,55, PenTurns=14,200000,0,0
+Arc=52, From=17, To=11, Qty=377, Inv= 0, Trav=18, Coll=395, Turns=30,31,32, PenTurns=3,11,11,200000
+Arc=53, From=17, To=16, Qty=399, Inv= 0, Trav=19, Coll=418, Turns=49,50,51, PenTurns=12,17,200000
+Arc=54, From=17, To=22, Qty=  0, Inv= 0, Trav=26, Coll= 26, Turns=73,74,75,76, PenTurns=0,0,0,0
+Arc=55, From=17, To=23, Qty=390, Inv= 0, Trav=15, Coll=405, Turns=77,78,79, PenTurns=0,0,0
+Arc=56, From=18, To=12, Qty=  0, Inv= 0, Trav=22, Coll= 22, Turns=33,34,35, PenTurns=15,12,200000
+Arc=57, From=18, To=19, Qty=348, Inv= 0, Trav=35, Coll=383, Turns=59,60,61,62, PenTurns=12,200000,0,0
+Arc=58, From=18, To=24, Qty=238, Inv= 0, Trav=21, Coll=259, Turns=80,81, PenTurns=0,0
+Arc=59, From=19, To=13, Qty=216, Inv= 0, Trav=18, Coll=234, Turns=36,37,38,39, PenTurns=0,12,0,0
+Arc=60, From=19, To=18, Qty=375, Inv= 0, Trav=35, Coll=410, Turns=56,57,58, PenTurns=0,0,0
+Arc=61, From=19, To=20, Qty= 26, Inv= 0, Trav=19, Coll= 45, Turns=63,64,65,66,67,68, PenTurns=0,0,0,0,0,0
+Arc=62, From=19, To=25, Qty= 32, Inv= 0, Trav=18, Coll= 50, Turns=82,83,84,85, PenTurns=0,0,0,0
+Arc=63, From=20, To=14, Qty=202, Inv= 0, Trav=19, Coll=221, Turns=40,41,42,43,95, PenTurns=0,0,0,0,0
+Arc=64, From=20, To=15, Qty=  0, Inv= 0, Trav=27, Coll= 27, Turns=44,45,46,47,48, PenTurns=9,0,12,0,0
+Arc=65, From=20, To=19, Qty=  0, Inv= 0, Trav=19, Coll= 19, Turns=59,60,61,62, PenTurns=0,0,0,0
+Arc=66, From=20, To=21, Qty=313, Inv= 0, Trav=19, Coll=332, Turns=69,70,71,72, PenTurns=0,0,0,0
+Arc=67, From=20, To=25, Qty=  0, Inv= 0, Trav=24, Coll= 24, Turns=82,83,84,85, PenTurns=0,0,0,0
+Arc=68, From=20, To=26, Qty=139, Inv= 0, Trav=14, Coll=153, Turns=86,87,88, PenTurns=0,0,0,0
+Arc=69, From=21, To=15, Qty=  0, Inv= 0, Trav=18, Coll= 18, Turns=44,45,46,47,48, PenTurns=2,0,10,0,0
+Arc=70, From=21, To=20, Qty=267, Inv= 0, Trav=19, Coll=286, Turns=63,64,65,66,67,68, PenTurns=0,0,0,0,0,0
+Arc=71, From=21, To=22, Qty=  0, Inv= 0, Trav=20, Coll= 20, Turns=73,74,75,76, PenTurns=0,0,0,0
+Arc=72, From=21, To=27, Qty=364, Inv= 0, Trav=17, Coll=381, Turns=89,90,91,92, PenTurns=0,0,0,0
+Arc=73, From=22, To=17, Qty=  0, Inv= 0, Trav=26, Coll= 26, Turns=52,53,54,55, PenTurns=14,12,0,0
+Arc=74, From=22, To=21, Qty= 11, Inv= 0, Trav=20, Coll= 31, Turns=69,70,71,72, PenTurns=0,0,0,0
+Arc=75, From=22, To=23, Qty=147, Inv= 0, Trav=21, Coll=168, Turns=77,78,79, PenTurns=0,0,0
+Arc=76, From=22, To=27, Qty= 98, Inv= 0, Trav=26, Coll=124, Turns=89,90,91,92, PenTurns=0,0,0,0
+Arc=77, From=23, To=17, Qty=  0, Inv= 0, Trav=15, Coll= 15, Turns=52,53,54,55, PenTurns=20,14,0,0
+Arc=78, From=23, To=22, Qty=  0, Inv= 0, Trav=21, Coll= 21, Turns=73,74,75,76, PenTurns=0,0,0,0
+Arc=79, From=23, To=28, Qty=  0, Inv= 0, Trav=19, Coll= 19, Turns=93,94, PenTurns=0,0
+Arc=80, From=24, To=18, Qty=  0, Inv= 0, Trav=21, Coll= 21, Turns=56,57,58, PenTurns=3,0,0
+Arc=81, From=24, To=25, Qty=394, Inv= 0, Trav=41, Coll=435, Turns=82,83,84,85, PenTurns=0,0,0,0
+Arc=82, From=25, To=19, Qty=  0, Inv= 0, Trav=18, Coll= 18, Turns=59,60,61,62, PenTurns=10,10,0,0
+Arc=83, From=25, To=20, Qty=  0, Inv= 0, Trav=24, Coll= 24, Turns=63,64,65,66,67,68, PenTurns=0,0,0,0,0,0
+Arc=84, From=25, To=24, Qty=286, Inv= 0, Trav=41, Coll=327, Turns=80,81, PenTurns=0,0
+Arc=85, From=25, To=26, Qty= 59, Inv= 0, Trav=18, Coll= 77, Turns=86,87,88, PenTurns=0,0,0
+Arc=86, From=26, To=20, Qty= 83, Inv= 0, Trav=14, Coll= 97, Turns=63,64,65,66,67,68, PenTurns=0,0,0,0,0,0
+Arc=87, From=26, To=25, Qty=  0, Inv= 0, Trav=18, Coll= 18, Turns=82,83,84,85, PenTurns=0,0,0,0
+Arc=88, From=26, To=27, Qty=262, Inv= 0, Trav=20, Coll=282, Turns=89,90,91,92, PenTurns=0,0,0,0
+Arc=89, From=27, To=21, Qty=  0, Inv= 0, Trav=17, Coll= 17, Turns=69,70,71,72, PenTurns=10,0,0,0
+Arc=90, From=27, To=22, Qty=398, Inv= 0, Trav=26, Coll=424, Turns=73,74,75,76, PenTurns=0,0,0,0
+Arc=91, From=27, To=26, Qty=  0, Inv= 0, Trav=20, Coll= 20, Turns=86,87,88, PenTurns=0,0,0
+Arc=92, From=27, To=28, Qty=384, Inv= 0, Trav=39, Coll=423, Turns=93,94, PenTurns=0,0
+Arc=93, From=28, To=23, Qty=  0, Inv= 0, Trav=19, Coll= 19, Turns=77,78,79, PenTurns=0,0,0
+Arc=94, From=28, To=27, Qty=  0, Inv= 0, Trav=39, Coll= 39, Turns=89,90,91,92, PenTurns=0,0,0,0
+Arc=95, From=14, To=14, Qty=  0, Inv= 0, Trav= 0, Coll=  0, Turns=40,41,42,43,95, PenTurns=0,0,0,0,0
