@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - mineiro@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="mineiro">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="db1"/>
+    <schema id="4" parent="1" name="db2"/>
+    <schema id="5" parent="1" name="gep"/>
+    <schema id="6" parent="1" name="gsm"/>
+    <schema id="7" parent="1" name="information_schema"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="phpmyadmin"/>
+    <schema id="11" parent="1" name="test"/>
+    <table id="12" parent="2" name="carrinho_compras"/>
+    <table id="13" parent="2" name="categoria"/>
+    <table id="14" parent="2" name="metodo_pagamento"/>
+    <table id="15" parent="2" name="produto"/>
+    <table id="16" parent="2" name="promocoes"/>
+    <table id="17" parent="2" name="tipo_produto"/>
+    <table id="18" parent="2" name="utilizador"/>
+    <table id="19" parent="2" name="venda"/>
+    <column id="20" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="12" name="id_venda">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="22" parent="12" name="id_Produto">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="23" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="13" name="descricao">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="26" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="14" name="descricao">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="29" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="15" name="nome">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="32" parent="15" name="marca">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="33" parent="15" name="preco">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="34" parent="15" name="id_categoria">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="35" parent="15" name="id_tipo_produto">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="36" parent="15" name="quantidade">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="37" parent="15" name="imagem">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="38" parent="15" name="descricao">
+      <Position>9</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="39" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="16" name="id_produto">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="42" parent="16" name="data_inicio">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="43" parent="16" name="data_fim">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="44" parent="16" name="valor_promocao">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="45" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="17" name="drescricao">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="48" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="18" name="nome">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="51" parent="18" name="ultimo_nome">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="52" parent="18" name="morada">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="53" parent="18" name="NIF">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="54" parent="18" name="email">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="55" parent="18" name="pass">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="56" parent="18" name="contacto">
+      <Position>8</Position>
+      <DataType>varchar(9)|0</DataType>
+    </column>
+    <column id="57" parent="18" name="data_nascimento">
+      <Position>9</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="58" parent="18" name="cidade">
+      <Position>10</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="59" parent="18" name="cod_postal">
+      <Position>11</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="60" parent="18" name="distrito">
+      <Position>12</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="61" parent="18" name="pais">
+      <Position>13</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="62" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="63" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="19" name="id_utilizador">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="65" parent="19" name="id_metodo_pagamento">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="66" parent="19" name="valor_total">
+      <Position>4</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <key id="67" parent="19" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
