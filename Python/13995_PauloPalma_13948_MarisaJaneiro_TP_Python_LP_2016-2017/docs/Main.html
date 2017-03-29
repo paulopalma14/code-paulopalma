@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Main.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Main.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Inst</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">Course</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">XLSReader</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">codecs</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">main</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>color1 = input("Cor das Instituições(Eng):")
+shape1 = input("Forma das Instituiçõs(Box, Square, Star, etc):")
+color2 = input("Cor dos Cursos(Eng):")
+shape2 = input("Forma dos Cursos(Box, Square, Star, etc):")</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">reader</span> <span class="o">=</span> <span class="n">XLSReader</span><span class="p">(</span><span class="s2">&quot;data/data.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;Tabela 4&quot;</span><span class="p">)</span>
+
+    <span class="n">instList</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">getInstsFromFile</span><span class="p">()</span>
+    <span class="n">filledList</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">getCourses</span><span class="p">(</span><span class="n">instList</span><span class="p">)</span>
+
+    <span class="n">instFilterList</span> <span class="o">=</span> <span class="n">filterInstList</span><span class="p">(</span><span class="n">filledList</span><span class="p">)</span>
+    <span class="n">instFilledFilterList</span> <span class="o">=</span> <span class="n">filterCoursesList</span><span class="p">(</span><span class="n">instFilterList</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">writeOutPut</span><span class="p">(</span><span class="n">instFilledFilterList</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;box&quot;</span><span class="p">,</span> <span class="s2">&quot;star&quot;</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>This Method filter the list of institutions by the input of the file (instituicoes.txt).</p>
+<p>:param list - list of all institutions.</p>
+<p>:return - return a list of filtered institutions.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>This Method filters the courses of each institution by the input of the file (cursos.txt).</p>
+<p>:param list - list of the filtred institutions.</p>
+<p>:return- return a list of institutions with the courses filtered.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">filterInstList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="n">newList</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">txtList</span> <span class="o">=</span> <span class="n">readTxtFile</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">txtList</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">txt</span> <span class="ow">in</span> <span class="n">txtList</span><span class="p">:</span>
+                <span class="n">instName</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span>
+                <span class="n">txt</span> <span class="o">=</span> <span class="n">txt</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">instName</span> <span class="o">==</span> <span class="n">txt</span><span class="p">):</span>
+                    <span class="n">newList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">newList</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">list</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>Method that reads the input files.</p>
+<p>:param id - indentifies the file it must read.</p>
+<p>:return- return in form of list the content of the files.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">filterCoursesList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="n">newList</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">txtList</span> <span class="o">=</span> <span class="n">readTxtFile</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">txtList</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">course</span> <span class="ow">in</span> <span class="n">inst</span><span class="o">.</span><span class="n">getListaCursos</span><span class="p">():</span>
+                <span class="k">for</span> <span class="n">txt</span> <span class="ow">in</span> <span class="n">txtList</span><span class="p">:</span>
+                    <span class="n">txt</span> <span class="o">=</span> <span class="n">txt</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+                    <span class="n">cName</span> <span class="o">=</span> <span class="n">course</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">cName</span> <span class="o">==</span> <span class="n">txt</span><span class="p">):</span>
+                        <span class="n">inst</span><span class="o">.</span><span class="n">addCourseFilter</span><span class="p">(</span><span class="n">course</span><span class="p">)</span>
+            <span class="n">newList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">newList</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">course</span> <span class="ow">in</span> <span class="n">inst</span><span class="o">.</span><span class="n">getListaCursos</span><span class="p">():</span>
+                <span class="n">inst</span><span class="o">.</span><span class="n">addCourseFilter</span><span class="p">(</span><span class="n">course</span><span class="p">)</span>
+            <span class="n">newList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">newList</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Method that generates the code to create the graph.</p>
+<p>:param listInst - list of institutions to generate.</p>
+<p>:param color1 - color of the institutions on the graph.</p>
+<p>:param color2 - color of the courses on the graph.</p>
+<p>:param shape1 - shape of the institutions on the graph.</p>
+<p>:param shape2 - shape of the courses on the graph.</p>
+<p>:return - string in dot to generate the graph.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">readTxtFile</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">listFile</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/instituicoes.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">id</span> <span class="o">==</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/cursos.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="n">listFile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">listFile</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">writeOutPut</span><span class="p">(</span><span class="n">listInst</span><span class="p">,</span> <span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">,</span> <span class="n">shape1</span><span class="p">,</span> <span class="n">shape2</span><span class="p">):</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="s2">&quot;digraph G {&quot;</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="n">listInst</span><span class="p">:</span>
+        <span class="n">listaCurso</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">getShowFilterList</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">curso</span> <span class="ow">in</span> <span class="n">listaCurso</span><span class="p">:</span>
+            <span class="n">totalStu</span> <span class="o">=</span> <span class="n">curso</span><span class="o">.</span><span class="n">getTotalStu</span><span class="p">()</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">totalStu</span> <span class="o">/</span> <span class="mi">100</span>
+            <span class="n">body</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&quot;&#39;</span> <span class="o">+</span> <span class="n">curso</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;&quot; [height=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,weight=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;];&#39;</span>
+            <span class="n">body</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&quot;&#39;</span> <span class="o">+</span> <span class="n">curso</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;&quot; [shape=&#39;</span> <span class="o">+</span> <span class="n">shape1</span> <span class="o">+</span> <span class="s1">&#39;, color=&#39;</span> <span class="o">+</span> <span class="n">color1</span> <span class="o">+</span> <span class="s1">&#39;];&#39;</span>
+            <span class="n">body</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&quot;&#39;</span> <span class="o">+</span> <span class="n">inst</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;&quot; [shape=&#39;</span> <span class="o">+</span> <span class="n">shape2</span> <span class="o">+</span> <span class="s1">&#39;, color=&#39;</span> <span class="o">+</span> <span class="n">color2</span> <span class="o">+</span> <span class="s1">&#39;];&#39;</span>
+            <span class="n">body</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&quot;&#39;</span> <span class="o">+</span> <span class="n">inst</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;&quot;-&gt;&quot;&#39;</span> <span class="o">+</span> <span class="n">curso</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;&quot;;&#39;</span>
+
+    <span class="n">footer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">}&quot;</span>
+
+    <span class="k">return</span> <span class="n">header</span> <span class="o">+</span> <span class="n">body</span> <span class="o">+</span> <span class="n">footer</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
